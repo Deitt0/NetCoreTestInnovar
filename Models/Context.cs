@@ -12,5 +12,6 @@ namespace BarApi.Models
 
         }
         public DbSet<Beer> Beers {get;set;}
+        public DbSet<Brand> Brands {get;set;}
     }
 }
