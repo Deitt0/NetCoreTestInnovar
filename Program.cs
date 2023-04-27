@@ -11,7 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<Context>(opt => 
-    opt.UseInMemoryDatabase("Beer")
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("connection_sql"))
 );
 
 

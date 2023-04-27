@@ -43,7 +43,7 @@ namespace BarApi.Controllers
     //Update beer
     [HttpPut]
     public Beer? UpdateBeer(Beer beer){
-        var beerDbo = _context.Beers.Find(beer.Id);
+        var beerDbo = _context.Beers.Find(beer.BeerId);
 
         if(beerDbo == null) return null;
 

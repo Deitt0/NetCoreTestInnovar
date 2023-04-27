@@ -1,14 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BarApi.Models
 {
     public class Beer
     {
-        public long Id {get;set;}
+        [Key]
+        public long BeerId {get;set;}
         public string Name {get; set;}
+        public int Year {get;set;}
+        public long BrandId {get;set;}
+
+        [ForeignKey(nameof(BrandId))]
+        public Brand? Brand {get;set;}
     }
 }

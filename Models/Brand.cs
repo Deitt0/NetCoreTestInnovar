@@ -10,5 +10,6 @@ namespace BarApi.Models
         public long Id {get;set;}
         public string Name {get;set;}
         public string Country {get;set;}
+        public ICollection<Beer>? Beers {get;set;}
     }
 }
