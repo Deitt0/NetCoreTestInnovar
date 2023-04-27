@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using BarApi.Models;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<Context>(opt => 
     opt.UseSqlServer(builder.Configuration.GetConnectionString("connection_sql"))
 );
+
+builder.Services.AddControllers().AddJsonOptions(x =>
+                x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
 
 
