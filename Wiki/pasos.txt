@@ -1,0 +1,36 @@
+
+/--- Creador
+Mis PreContenidos
+G-TeCo.PreContent.GeAlMyPrCo
+
+Crear PerContenido
+P-TeCo.PreContent.CrPrCo
+
+Obtener Cursos Activos
+G-TeCo.Course.GeAcCo
+
+Obtener Niveles Activos
+G-TeCo.Level.GeAcLe
+
+Obtener el Creador
+G-TeCo.ContentCreator.GeCoCrByPeId
+
+/-- Administrador
+Crear Usuario
+P-Se.User.ReUs
+
+/-- Revisor
+Obtener el Revisor
+G-TeCo.ContentReviewer.GeCoReByPeId
+
+Obtener los pre contenidos pendientes
+G-TeCo.PreContent.GePePrCo
+
+Revisar Pre Contenido (Aprobar)
+P-TeCo.PreContent.ApPrCo
+
+Observar
+P-TeCo.PreContent.ObPrCo
+
+Rechazar
+P-TeCo.PreContent.RePrCo
