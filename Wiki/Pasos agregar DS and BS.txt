@@ -1,0 +1,44 @@
+:::Agregar estructura DataService and BusinessService:::
+
+Crear carpeta para DataService y agregar un entidadDataService.cs
+Crear carpeta para BusinessService y agregar un entidadBusinessSerice.cs
+Registrar DataService en Program:
+	builder.Services.AddTransient<entidadDataService>();
+Registrar BusinessService en Program:
+	builder.Services.AddTransient<entidadBusinessSerice>();
+Crear metodo GetAll en entidadDataService.cs
+Craer metodo GetAll en entidadBusinessService.cs
+Crear metodo GetAll en entidadController.cs
+Importar el entidadDataService en entidadBusinessService y entidadBusinessService en entidadController y usar el metodo GetAll
+
+
+:::Agregar Mappeos:::
+
+Agregar libreria AutoMapper:
+	dotnet add package AutoMapper
+Agregar libreria AutoMApperInjection:
+	dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection
+Crear carpeta ViewModel
+Craer entidadViewModel.cs para una entidad en la carpeta ViewModel
+Crear carpeta Config
+Crear MappingProfile.cs Config:
+
+	public class MappingProfile: Profile
+	{
+	    public MappingProfile(){
+	        CreateMap<Beer, BeerViewModel>();
+	        CreateMap<BeerViewModel, BeerViewModel>();
+	    }
+	}
+
+Agregar automapper a program.cs:
+	builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+Insertar IMapper en contructor de entidadBusinessService.cs :
+	private IMapper _mapper;
+	entidadBusinessService(IMapper mapper):{
+		_mapper = mapper;
+	}
+
+Agregar el mappeo en BusinessService:
+	_mapper.Map<entidadViewModel>(entidad);
